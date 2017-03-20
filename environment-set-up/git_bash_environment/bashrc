@@ -5,6 +5,8 @@ source .git_provided_scripts/*.sh
 # Nice git prompt
 branch='$(__git_ps1 "(%s)")'
 
-#PS1='[\u@\h] \w $(__git_ps1 "(%s)")\$ '
 PS1='[\u@\h] \[\033[38;5;69m\]\w\[$(tput sgr0)\] $(__git_ps1 "(%s)")\[\033[38;5;15m\]\$\[$(tput sgr0)\] '
 
+# Some alias I like
+alias ll='ls -lh'
+alias svim='sudo vim'
