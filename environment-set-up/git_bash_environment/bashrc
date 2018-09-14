@@ -1,12 +1,20 @@
+# Add git branch if its present to PS1
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
 
-# Git script functions
-source .git_provided_scripts/*.sh
+PS1='[\u@\h] \[\033[38;5;69m\]\w \[\033[00m\]$(parse_git_branch)\[\033[00m\]\$ '
 
-# Nice git prompt
-branch='$(__git_ps1 "(%s)")'
 
-PS1='[\u@\h] \[\033[38;5;69m\]\w\[$(tput sgr0)\] $(__git_ps1 "(%s)")\[\033[38;5;15m\]\$\[$(tput sgr0)\] '
+## Environment var to lauch default editor
+EDITOR='vim'
 
-# Some alias I like
+## Alias created by the user with system-wide scope
+alias lll='tree -L 3'
 alias ll='ls -lh'
-alias svim='sudo vim'
+alias l='tree -L 1'
+alias pymat='python -i -c "from numpy import *"'
+alias prp='pipenv run python'
+alias diff='colordiff -u'
+alias pythoni='python -i'
+
