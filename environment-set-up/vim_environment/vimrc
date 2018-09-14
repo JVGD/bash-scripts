@@ -1,9 +1,20 @@
 " Options I like
 " to be added in ~/.vimrc or into 
 " /etc/vimrc if you have permissions
+
+runtime! archlinux.vim
+
+filetype plugin on
+
 syntax on
+
 set number
-"set expandtab
-set tabstop=2
+set expandtab
+set tabstop=4
 set smartindent 
-set shiftwidth=2
+set shiftwidth=4
+set wrap
+set textwidth=80
+
+" For bash files
+autocmd FileType sh setlocal expandtab shiftwidth=2 tabstop=2
