@@ -18,3 +18,5 @@ alias prp='pipenv run python'
 alias diff='colordiff -u'
 alias pythoni='python -i'
 
+# Tell shell to show tabs as 4 spaces
+tabs 4
