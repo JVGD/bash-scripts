@@ -1,22 +1,41 @@
-# Add git branch if its present to PS1
+# Custom bash by JVGD remove this to the end
+# to fallback to prev conf
+
+# By the-bootstrap:
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
+# Prompt
 PS1='[\u@\h] \[\033[38;5;69m\]\w \[\033[00m\]$(parse_git_branch)\[\033[00m\]\$ '
 
-
-## Environment var to lauch default editor
+# Environment var to lauch default editor
 EDITOR='vim'
 
-## Alias created by the user with system-wide scope
-alias lll='tree -L 3'
-alias ll='ls -lh'
-alias l='tree -L 1'
+# Listing alias
+alias ll='ls -lha'
+alias l='tree -L 1 --du -sh'
+alias l2='tree -L 2 --du -sh --filelimit 30'
+alias l3='tree -L 3 --du -sh --filelimit 30'
+
+# dir alias
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+# Term alias
+alias x='exit'
+alias xo='xdg-open'
+alias diff='colordiff -u'
+alias ipy='ipython -i -c "import numpy as np"'
+alias py='python'
+alias du='du -h -d1'
 alias pymat='python -i -c "from numpy import *"'
 alias prp='pipenv run python'
-alias diff='colordiff -u'
-alias pythoni='python -i'
+alias psp='ps aux | grep'
+alias rm='rm -I'
 
 # Tell shell to show tabs as 4 spaces
 tabs 4
+
