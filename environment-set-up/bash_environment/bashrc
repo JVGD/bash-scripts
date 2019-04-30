@@ -27,15 +27,19 @@ alias .....='cd ../../../..'
 # Term alias
 alias x='exit'
 alias xo='xdg-open'
-alias diff='colordiff -u'
-alias ipy='ipython -i -c "import numpy as np"'
-alias py='python'
 alias du='du -h -d1'
-alias pymat='python -i -c "from numpy import *"'
-alias prp='pipenv run python'
-alias psp='ps aux | grep'
 alias rm='rm -I'
+
+# Python shortcuts
+alias py='python'
+alias pymat='python -i -c "from numpy import *"'
+alias ipy='ipython -i -c "import numpy as np"'
+alias prp='pipenv run python'
+alias diff='colordiff -u'
+alias psp='ps aux | grep'
 
 # Tell shell to show tabs as 4 spaces
 tabs 4
 
+# Bash shortcut: Bind ctrl+f to move cursor forward one word
+bind '"\C-f": forward-word'
